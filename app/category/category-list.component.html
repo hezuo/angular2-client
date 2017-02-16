@@ -1,0 +1,40 @@
+<script src="../../../../Downloads/angular-2-reactive-forms/8-angular-2-reactive-forms-m8-exercise-files/APM/app/products/product-edit.component.ts"></script>
+<div class="page-header">
+    <h3>{{pageTitle}}</h3>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class='panel panel-default'>
+            <div class='panel-body'>
+                <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+                <div class='table-responsive'>
+                    <table class="table table-hover" *ngIf='categories && categories.length'>
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Area</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor='let category of categories'>
+                            <td>{{ category.id }}</td>
+                            <td>{{ category.name }}</td>
+                            <td>{{ category.area }}</td>
+                            <td>
+                                <a [routerLink]="['/category', category.id]">
+                                    <button type="button" class="btn btn-info">Edit</button>
+                                </a>
+                                <a [routerLink]="['/category', category.id]">
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                </a>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
