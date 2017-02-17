@@ -1,0 +1,37 @@
+<div class="page-header" *ngIf='category'>
+    <h3 class="display-5">{{pageTitle + ' : ' + category.name}}</h3>
+</div>
+<div class="alert alert-success" role="alert" *ngIf='message'>
+    <strong>Well done!</strong> Update correct
+</div>
+<div class="alert alert-danger" role="alert" *ngIf='errorMessage'>
+    <strong>Oh snap!</strong> {{errorMessage}}
+</div>
+
+<div class='col-md-6 col-md-offset-3' *ngIf='category'>
+    <form #categoryEditForm="ngForm" (ngSubmit)="editSubmit(categoryEditForm)" autocomplete="off" novalidate>
+        <div class="form-group row" [class.has-error]="categoryName.invalid && categoryName.touched">
+            <label for="category_name" class="col-2 col-form-label">Name</label>
+            <div class="col-10">
+                <input #categoryName="ngModel" [(ngModel)]="category.name" type="text" id="category_name"
+                       name="category_name" class="form-control" placeholder="Name" required>
+            </div>
+            <div *ngIf="categoryName.invalid && categoryName.dirty" class="alert alert-danger">Required</div>
+        </div>
+        <div class="form-group row" [class.has-error]="categoryArea.invalid && categoryArea.touched">
+            <label for="category_area" class="col-2 col-form-label">Area</label>
+            <div class="col-10">
+                <input #categoryArea="ngModel" [(ngModel)]="category.area" type="text" class="form-control"
+                    id="category_area" name="category_area" placeholder="Area" required>
+            </div>
+            <div *ngIf="categoryArea.invalid && categoryArea.dirty" class="alert alert-danger">Required</div>
+        </div>
+        <div class="form-group row">
+            <label for="category_area" class="col-2 col-form-label"></label>
+            <div class="col-10">
+                <button type="submit" [disabled]="categoryEditForm.invalid" class="btn btn-primary" aria-pressed="true">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+<a class="btn btn-secondary" (click)='onBack()' style='width:80px' [routerLink]="['/category']" role="button" aria-pressed="true">Back</a>
