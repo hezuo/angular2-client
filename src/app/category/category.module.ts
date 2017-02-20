@@ -6,6 +6,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {CategoryEditComponent} from "./category-edit.component";
 import {FormsModule} from "@angular/forms";
 import {CategoryNewComponent} from "./category-new.component";
+import {CategoryDeleteComponent} from "./category-delete.component";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {CategoryNewComponent} from "./category-new.component";
   declarations: [
     CategoryListComponent,
     CategoryEditComponent,
-    CategoryNewComponent
+    CategoryNewComponent,
+    CategoryDeleteComponent
   ],
   providers: [
     CategoryService

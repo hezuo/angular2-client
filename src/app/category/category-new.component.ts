@@ -1,10 +1,11 @@
 
-import {OnInit, Component, OnDestroy} from "@angular/core";
+import {OnInit, Component} from "@angular/core";
 import {NgForm} from "@angular/forms";
 import {Router, ActivatedRoute} from "@angular/router";
 import {CategoryService} from "./category.service";
 import {ICategory} from "./category";
 import {IMessageHttp} from "../util/messageHttp";
+import {Subscription} from "rxjs";
 
 @Component({
     templateUrl: 'app/category/category-new.component.html'
@@ -14,6 +15,7 @@ export class CategoryNewComponent implements OnInit {
     pageTitle: string = 'Category new';
     category: ICategory;
     errorMessage: string;
+    private sub: Subscription;
 
 
     constructor(

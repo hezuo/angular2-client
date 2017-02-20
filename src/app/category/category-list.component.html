@@ -20,8 +20,9 @@
                     <td>
                         <a class="btn btn-info" [routerLink]="['/category', category.id]" role="button"
                            aria-pressed="true">Edit</a>
-                        <a class="btn btn-danger" [routerLink]="['/category', category.id]" aria-pressed="true"
-                           role="button">Delete</a>
+                        <button type="button" class="btn btn-danger"
+                                (click)="selectedCategory = category" aria-pressed="true"
+                                data-toggle="modal" data-target="#modalDeleteCategory" >Delete</button>
                     </td>
                 </tbody>
             </table>
@@ -30,3 +31,4 @@
            role="button">New Category</a>
     </div>
 </div>
+<category-delete [category]="selectedCategory" (eventDelete)="deleteConfirmCategory($event)"> ></category-delete>

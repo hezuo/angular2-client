@@ -43,6 +43,13 @@ export class CategoryService {
             .catch(this.handleError);
     }
 
+    deleteCategory(id: number): Observable<any> {
+        return this._http.delete(this._categoryEndpoint + '/' + id)
+          .map((response: Response) => response.json())
+          .do(data => console.log("Response delete: " + JSON.stringify(data)))
+          .catch(this.handleError);
+    }
+
     private handleError(error: Response) {
         console.error(error);
 
