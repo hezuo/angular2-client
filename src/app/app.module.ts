@@ -8,6 +8,7 @@ import { WelcomeComponent } from './home/welcome.component';
 
 import { ProductModule } from './products/product.module';
 import { CategoryModule } from "./category/category.module";
+import {ErrorPagesModule} from "./error-pages/error-pages.module";
 
 @NgModule({
   imports: [
@@ -16,10 +17,10 @@ import { CategoryModule } from "./category/category.module";
     RouterModule.forRoot([
       { path: 'homepage', component: WelcomeComponent },
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },
-      { path: '**', redirectTo: 'homepage', pathMatch: 'full' }
+      { path: '**', redirectTo: '404', pathMatch: 'full' }
     ]),
-    ProductModule,
-    CategoryModule
+    CategoryModule,
+    ErrorPagesModule
   ],
   declarations: [
     AppComponent,

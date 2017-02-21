@@ -15,9 +15,7 @@
                 <h3>Filtered by: {{listFilter}} </h3>
             </div>
         </div>
-
         <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
-
         <div class='table-responsive'>
             <table class="table table-hover" *ngIf='products && products.length'>
                 <thead>
@@ -41,7 +39,7 @@
                             <img *ngIf='showImage'
                                  [src]='product.imageUrl'
                                  [title]='product.productName | uppercase'
-                                 [style.width.px]='imageWidth' 
+                                 [style.width.px]='imageWidth'
                                  [style.margin.px]='imageMargin'>
                         </td>
                         <td><a [routerLink]="['/product', product.productId]">
