@@ -7,17 +7,14 @@ import {CategoryEditComponent} from "./category-edit.component";
 import {FormsModule} from "@angular/forms";
 import {CategoryNewComponent} from "./category-new.component";
 import {CategoryDeleteComponent} from "./category-delete.component";
-
+import {categoryRoutes} from "./category.routes";
+import {AuthGuard} from "../guards/auth.guard";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forChild([
-      {path: 'category', component: CategoryListComponent},
-      {path: 'category/:idCategory', component: CategoryEditComponent},
-      {path: 'category-new', component: CategoryNewComponent}
-    ])
+    RouterModule.forChild(categoryRoutes)
   ],
   declarations: [
     CategoryListComponent,
@@ -26,7 +23,8 @@ import {CategoryDeleteComponent} from "./category-delete.component";
     CategoryDeleteComponent
   ],
   providers: [
-    CategoryService
+    CategoryService,
+    AuthGuard
   ]
 })
 
