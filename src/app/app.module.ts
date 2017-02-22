@@ -8,6 +8,7 @@ import { CategoryModule } from "./category/category.module";
 import { ErrorPagesModule } from "./error-pages/error-pages.module";
 import { LoginModule } from "./login/login.module";
 import { AuthGuard } from "./guards/auth.guard";
+import {UserModule} from "./user/user.module";
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { AuthGuard } from "./guards/auth.guard";
       { path: '**', redirectTo: '404', pathMatch: 'full' }
     ]),
     CategoryModule,
+    UserModule,
     LoginModule,
     ErrorPagesModule
   ],

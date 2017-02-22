@@ -28,8 +28,6 @@ export class CategoryDeleteComponent {
       error => this.errorMessage = <any>error
     );
 
-
-
     jQuery("#modalDeleteCategory").modal("hide");
 
   }

@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
   loading = false;
   error:string = '';
 
-  constructor(private router: Router) {
+  constructor(private _router: Router) {
   }
 
   ngOnInit() {
@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit {
 
   login(){
     console.log("login");
+  }
+
+  goCreateUser(){
+    this._router.navigate(['/create-user']);
   }
 
 }

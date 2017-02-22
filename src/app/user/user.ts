@@ -1,10 +1,15 @@
 /**
- * Created by rdiaz on 21/02/2017.
+ * Created by rdiaz on 22/02/2017.
  */
 
-export interface IUser {
-    id: string;
-    name: string;
-    email:string;
-    password:string;
+export class User {
+
+  public id:number;
+
+  constructor(
+    public name:string = "",
+    public email:string = "",
+    public password:string = ""){
+  }
+
 }

@@ -1,16 +1,19 @@
 <div class="container">
   <form name="form-signin" class="form-signin" novalidate>
     <h2 class="form-signin-heading">Please sign in</h2>
-    <div class="form-group" >
-      <label for="email">email</label>
-      <input type="email" class="form-control" id="email" name="email" required />
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required/>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" name="password"  required />
+      <input type="password" class="form-control" id="password" name="password" required/>
     </div>
     <div class="form-group">
       <button class="btn btn-primary">Login</button>
     </div>
   </form>
+  <div class="form-signin">
+    <button (click)="goCreateUser()" class="btn btn-link">Create account</button>
+  </div>
 </div>
